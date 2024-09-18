@@ -7,7 +7,7 @@
 - IT service management teams.
 ### What Are The Main Features:
 customizable workflows, issue tracking, reporting, and integration with hundreds of other tools.
-### Main Uses Cases
+### Main Use Cases
 - plan, track, and release software
 - manage projects by providing transparency into tasks, progress, and bottlenecks. 
 - supports both agile methodologies, such as Scrum and Kanban, and traditional project management approaches, 
