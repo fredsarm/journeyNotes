@@ -279,7 +279,7 @@ Booleans represent logical entities and can have two values: `true` or `false`.
   ```
 
   This ensures that no other code can accidentally override or access this property unless it has a reference to the specific symbol.
-  See [[The Use Of Square Brackets to Evaluate Expressions]]
+  See [The Use Of Square Brackets to Evaluate Expressions](The%20Use%20Of%20Square%20Brackets%20to%20Evaluate%20Expressions.md)
 ##### Global Symbol Registry:
 JavaScript also provides a **global symbol registry**, where you can register and reuse symbols across your application. This allows symbols with the same key to refer to the same symbol:
 
