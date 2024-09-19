@@ -28,7 +28,7 @@
 | **IEEE Std 830-1998 Specification**     | 24                | 1                |                 |                  |                   |
 | **Clean Code**                          | 48                | 2                |                 |                  |                   |
 | Continuous Delivery                     | 72                | 3                |                 |                  |                   |
-| **Jira**                                | 32                | 1                | 7               | 7                | 8                 |
+| **Jira**                                | 32                | 1                | 15              | 15               |                   |
 | **Agile**                               | 24                | 1                | 1               | 1                |                   |
 | **Scrum**                               | 24                | 1                | 2               | 2                |                   |
 | SAFe 5.0 Distilled                      | 24                | 1                |                 |                  |                   |
