@@ -169,14 +169,16 @@ Key steps in setting up a custom template:
 3. **Configure Custom Fields**: Add fields specific to the team’s needs, such as due dates, risk levels, or estimated hours.
 4. **Custom Boards**: Design your own boards with columns that reflect the stages in your workflow.
 
-## 2.4 Permissions
-## 2.4.1 Permission Scopes
-There are three scope levels. The Atlassian account scope, the Product scope (Jira, for example) and the product scope.
-#### 2.4.1.1. Atlassian account scope
-In the Atlassian account, we can create, modify and exclude groups. The main purpose of the groups is to define what level of permissions the the member will be granted to access Atlassian products. Usually, there are more than one group defined to a product. One with administer role and another with just user role.
-These groups will also be able to receive Jira global permissions and permissions in the permissions scheme of the projects.
-#### 2.4.1.2. Jira Global Level Permissons
+## 2.4 Configuring Permissions
 
+There are three scope levels. The **Atlassian account** scope, the product scope (**Jira** for example) and the **project** scope.
+### 2.4.1. Atlassian account scope
+Atlassian account is where **users** and **groups** are created, modified and excluded. The main purpose of them is to define what level of permissions the member will be granted to access Atlassian products. These permissions are granted with pre-defined roles that is not possible to edit. Usually, there are more than one group defined to product and user. One with administer role and another with just a user role.
+These groups are also able to receive ***Jira global permissions*** at the global scope inside Jira and ***project level permissions*** in the *permissions scheme* of each project, that is, at the *project scope*.
+### 2.4.2. Jira Global Level Permissions
+Global permissions in Jira application are only granted to **groups**. Only Jira administrators can assign it.
+You can edit global permissions at Settings ⚙️ > System > Global Permissions
+ 
 | Permission                                                        | Explanation                                                                                                                                                                                                                                  |
 | ----------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Administer Jira**                                               | Create and administer projects, issue types, fields, workflows, and schemes for all projects. Users with this permission can perform most administration tasks, except managing users, importing data, and editing system email settings.    |
@@ -186,39 +188,36 @@ These groups will also be able to receive Jira global permissions and permission
 | **Make bulk changes**                                             | Modify collections of issues at once. For example, resolve multiple issues in one step.                                                                                                                                                      |
 | **Atlassian Home for Jira Cloud project connection issue glance** | Enables the Atlassian Home for Jira Cloud issue glance field in issue sidebars, for connecting a Jira issue to a project overview.                                                                                                           |
 | **Create team-managed projects**                                  | Create projects separate from shared configurations and schemes. Team-managed projects don't affect existing projects or shared configurations like workflows, fields, or permissions. Only licensed users can create team-managed projects. |
+### 2.4.3 Project Level Permissions
 
-#### 2.4.1.3 Project Level Permissions
+**Project permissions** in Jira are organized through **permission schemes** where sets the main permission policies of the projects up. **Each** project can be assigned with **one** of them, which defines all the permission policies for it.
 
-##### a. Premission Schemes
+**Permission schemes** can also be **shared** and used by multiple projects. This makes it easier to maintain a consistent permission structure across different projects, as changes to the **shared scheme** will apply to all the projects using it.
 
-Project permissions in Jira are organized through **Permission Schemes**. **Each** project has **one** scheme that defines all the permission policies for it. **Schemes** can also be **shared** and used by multiple projects. This makes it easier to maintain a consistent permission structure across different projects, as changes to the **shared scheme** will apply to all the projects using it.
+You can edit permission schemes in the project screen at *Project Settings* > *Permissions* > *Project Permissions*
 
-The structure is as follows:
+#### a.1. **Granted Entities:**
 
-**Permission Scheme**: 
-
-A list of all permissions available to be granted. **Each** of these permissions can be granted to one or more of the following five entities: **Roles**, **Groups**, **Users**, **Applications**, and the **Public**, as detailed below:
-
-**Entities:**
+Permissions can be granted to one or more of the following five entities: **Roles**, **Groups**, **Users**, **Applications**, and the **Public**, as detailed below:
 
 - **Roles**
   - One or more project roles.
 - **Groups**
   - One or more groups.
-  - One or more groups with a specific custom field value set in the its profile.
+  - One or more groups with a specific custom field value. The custom field doesn't refer to values in a group's profile but to the group selected in the issue's custom field configuration.
 - **Users**
   - One or more individual users (called ***single user***).
   - Any user who is:
     - The current assignee.
-    - Logged in (belongs to the project).
+    - Logged in a Jira instance, regardless of their role in the project.
     - The reporter.
-    - A user with a specific custom field value set in its profile.
+    - One with a specific custom field value set in its profile (see the same case in groups).
     - The project lead.
     - Registered in the ***Service Project Customer - Portal Access***.
 - **Applications**
-  - External applications that integrate with Jira.
+  - This refers to users with access to specific Jira applications (e.g., Jira Software, Jira Service Management).
 - **Public**
-  - Any user with an Atlassian user account.
+  - Anyone in Internet.
 
 You can assign permissions to more than one **entity**.
 These following entities require you to select the granted **holder** from a list:
@@ -228,8 +227,8 @@ These following entities require you to select the granted **holder** from a lis
 - **Individual Users**
 - **Applications**
 - **Users and groups that have a certain value in a custom field**
-##### b. Available Permisions
-###### 1. Project Permissions
+#### a.2. Available Permisions
+###### Project Permissions
 
 | Permission              | Explanation                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -240,7 +239,7 @@ These following entities require you to select the granted **holder** from a lis
 | View aggregated data    | Users with this permission will have access to view combined and summarised project data, regardless of their individual permissions. [Learn more.](https://support.atlassian.com/jira-cloud-administration/docs/permissions-for-company-managed-projects/#Permissionsforcompanymanagedprojects-data)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 | View Development Tools  | Allows users in a software project to view development-related information on the issue, such as commits, reviews and build information.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 | View Read-Only Workflow | Users with this permission may view a read-only version of a workflow.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-###### 2. Issue Permissions
+###### Issue Permissions
 
 | Permission         | Explanation                                                                                                                                                                            |
 | ------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -258,14 +257,14 @@ These following entities require you to select the granted **holder** from a lis
 | Set Issue Security | Ability to set the level of security on an issue so that only people in that security level can see the issue.                                                                         |
 | Transition Issues  | Ability to transition issues.                                                                                                                                                          |
 
-###### 3. Voters & Watchers Permissions
+###### Voters & Watchers Permissions
 
 | Permission               | Explanation                                          |
 | ------------------------ | ---------------------------------------------------- |
 | Manage Watchers          | Ability to manage the watchers of an issue.          |
 | View Voters and Watchers | Ability to view the voters and watchers of an issue. |
 
-###### 4. Comments Permissions
+###### Comments Permissions
 
 | Permission          | Explanation                                    |
 | ------------------- | ---------------------------------------------- |
@@ -275,7 +274,7 @@ These following entities require you to select the granted **holder** from a lis
 | Edit All Comments   | Ability to edit all comments made on issues.   |
 | Edit Own Comments   | Ability to edit own comments made on issues.   |
 
-###### 5. Attachments Permissions
+###### Attachments Permissions
 
 | Permission             | Explanation                                                  |
 | ---------------------- | ------------------------------------------------------------ |
@@ -283,42 +282,33 @@ These following entities require you to select the granted **holder** from a lis
 | Delete All Attachments | Users with this permission may delete all attachments.       |
 | Delete Own Attachments | Users with this permission may delete their own attachments. |
 
-###### 6. Time Tracking Permissions
+###### Time Tracking Permissions
 
 | Permission          | Explanation                                    |
 | ------------------- | ---------------------------------------------- |
 | Delete All Worklogs | Ability to delete all worklogs made on issues. |
 | Delete Own Worklogs | Ability to delete own worklogs made on issues. |
 | Edit All Worklogs   | Ability to edit all worklogs made on issues.   |
-### 2.4.3 Administrators
 
-**Project Administrators** have the highest level of control within a project. Their responsibilities typically include:
-- **Configuring project settings**: This includes managing project details like the name, key, workflows, issue types, and boards.
-- **Managing users and roles**: Administrators can add or remove users from the project and assign roles to them.
-- **Customizing workflows and permissions**: Admins can modify workflows, adjust project permissions, and create custom schemes.
+### **Visual Representation**
 
-Project administrators play a crucial role in ensuring that the project is set up and maintained properly, aligning Jira with the team’s processes.
+**Atlassian Account Level (Site Administration):**
 
-### 2.4.4 Developers
+- **Groups**
+  - Assigned **Application Access Roles**
+    - Control **Product Access**
+    - Example: **Jira Software User**
 
-**Developers** in Jira have permissions to interact with the board and issues related to the project. Their primary functions include:
-- **Creating and updating issues**: Developers can create tasks, bugs, and user stories, assign them to themselves or teammates, and move them through the workflow.
-- **Tracking progress**: Developers update the status of issues as they progress from "To Do" to "In Progress" to "Done."
-- **Collaborating on tasks**: They can comment on issues, upload files, and mention teammates for collaboration.
+**Within Jira:**
 
-Developers do not have the authority to alter the project configuration but are key users of the project management interface.
+- **Global Permissions**
+  - Assigned to **Groups**
+  - Control actions across **all projects** (e.g., Administer Jira)
 
-### 2.4.5 Project Users
+- **Project Roles**
+  - Assigned to **Users, Groups and some other entities** within each project
+  - Used in **Permission Schemes** to control project-specific permissions
 
-**Project Users** are individuals who need access to the project but don’t have the full capabilities of developers or administrators. This role could include team members who contribute to tasks but are not directly responsible for development or management, such as:
-- **Stakeholders**: Individuals who need to monitor project progress but don’t actively contribute to task execution.
-- **Support Staff**: Team members who might help resolve issues or provide additional support but do not work directly on the project.
-
-Project users typically have permissions to view issues, add comments, and potentially create new issues, but cannot make changes to the project’s structure or workflows.
-
----
-
-This content delves into the essential aspects of setting up Jira, managing projects, and configuring roles, ensuring that users understand both the basic and customizable features of the platform.
 # 3. Jira Interface Overview
 
    3.1 Navigating the Jira dashboard  
