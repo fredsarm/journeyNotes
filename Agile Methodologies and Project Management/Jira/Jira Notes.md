@@ -10,18 +10,6 @@
        1.4.1 Scrum  
        1.4.2 Kanban  
 ## 1.1 What is Jira?
-### Who Are The Main Users:
-- development teams, 
-- business operations teams, 
-- marketing teams, 
-- IT service management teams.
-### What Are The Main Features:
-customizable workflows, issue tracking, reporting, and integration with hundreds of other tools.
-### Main Use Cases
-- plan, track, and release software
-- manage projects by providing transparency into tasks, progress, and bottlenecks. 
-- supports both agile methodologies, such as Scrum and Kanban, and traditional project management approaches, 
-- allow teams to work according to their preferred processes.
 ### About Jira
 - Launched year: 2002
 - Company: Atlassian
@@ -34,8 +22,6 @@ The types comes with its own set of templates, workflows, and reporting tools ta
 - Service Management Projects.
 ### 1.3.1 Software Projects
 
-They are specifically designed to help software development teams manage their workflow, from planning and coding to testing and deployment. 
-Software Projects typically 
 - follow agile methodologies like Scrum or Kanban
 - are built around managing 
 	- backlogs, 
@@ -74,10 +60,11 @@ Key features include:
 These projects are often used in conjunction with tools like Confluence (for knowledge bases) and Opsgenie (for incident response).
 
 ## 1.4 Agile Methodologies and Jira
-
-Jira is widely used in agile environments because of its strong support for both Scrum and Kanban methodologies. Agile methodologies focus on iterative development, continuous feedback, and flexible responses to change. Jira’s flexibility and adaptability to these workflows make it a leading tool for agile teams.
-
-Jira provides teams with agile boards, customizable workflows, and reporting tools, making it easy to plan, track, and report on progress.
+ Allow teams to plan and track workflow with 
+- Scrum
+- Kanban
+- Customizable workflows
+Jira provides teams with reporting tools, making it easy report on progress.
 
 ### 1.4.1 Scrum
 
@@ -182,11 +169,128 @@ Key steps in setting up a custom template:
 3. **Configure Custom Fields**: Add fields specific to the team’s needs, such as due dates, risk levels, or estimated hours.
 4. **Custom Boards**: Design your own boards with columns that reflect the stages in your workflow.
 
-## 2.4 Project Roles and Permissions
+## 2.4 Permissions
+## 2.4.1 Permission Scopes
+There are three scope levels. The Atlassian account scope, the Product scope (Jira, for example) and the product scope.
+#### 2.4.1.1. Atlassian account scope
+In the Atlassian account, we can create, modify and exclude groups. The main purpose of the groups is to define what level of permissions the the member will be granted to access Atlassian products. Usually, there are more than one group defined to a product. One with administer role and another with just user role.
+These groups will also be able to receive Jira global permissions and permissions in the permissions scheme of the projects.
+#### 2.4.1.2. Jira Global Level Permissons
 
-Jira offers a detailed system of roles and permissions to control who can access, modify, and manage projects. Each role comes with its own set of permissions, and these can be customized at both the project and global levels.
+| Permission                                                        | Explanation                                                                                                                                                                                                                                  |
+| ----------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Administer Jira**                                               | Create and administer projects, issue types, fields, workflows, and schemes for all projects. Users with this permission can perform most administration tasks, except managing users, importing data, and editing system email settings.    |
+| **Browse users and groups**                                       | View and select users or groups from the user picker, and share issues. Users with this permission can see the names of all users and groups on your site.                                                                                   |
+| **Share dashboards and filters**                                  | Share dashboards and filters with other users.                                                                                                                                                                                               |
+| **Manage group filter subscriptions**                             | Create and delete group filter subscriptions.                                                                                                                                                                                                |
+| **Make bulk changes**                                             | Modify collections of issues at once. For example, resolve multiple issues in one step.                                                                                                                                                      |
+| **Atlassian Home for Jira Cloud project connection issue glance** | Enables the Atlassian Home for Jira Cloud issue glance field in issue sidebars, for connecting a Jira issue to a project overview.                                                                                                           |
+| **Create team-managed projects**                                  | Create projects separate from shared configurations and schemes. Team-managed projects don't affect existing projects or shared configurations like workflows, fields, or permissions. Only licensed users can create team-managed projects. |
 
-### 2.4.1 Administrators
+#### 2.4.1.3 Project Level Permissions
+
+##### a. Premission Schemes
+
+Project permissions in Jira are organized through **Permission Schemes**. **Each** project has **one** scheme that defines all the permission policies for it. **Schemes** can also be **shared** and used by multiple projects. This makes it easier to maintain a consistent permission structure across different projects, as changes to the **shared scheme** will apply to all the projects using it.
+
+The structure is as follows:
+
+**Permission Scheme**: 
+
+A list of all permissions available to be granted. **Each** of these permissions can be granted to one or more of the following five entities: **Roles**, **Groups**, **Users**, **Applications**, and the **Public**, as detailed below:
+
+**Entities:**
+
+- **Roles**
+  - One or more project roles.
+- **Groups**
+  - One or more groups.
+  - One or more groups with a specific custom field value set in the its profile.
+- **Users**
+  - One or more individual users (called ***single user***).
+  - Any user who is:
+    - The current assignee.
+    - Logged in (belongs to the project).
+    - The reporter.
+    - A user with a specific custom field value set in its profile.
+    - The project lead.
+    - Registered in the ***Service Project Customer - Portal Access***.
+- **Applications**
+  - External applications that integrate with Jira.
+- **Public**
+  - Any user with an Atlassian user account.
+
+You can assign permissions to more than one **entity**.
+These following entities require you to select the granted **holder** from a list:
+
+- **Roles**
+- **Groups**
+- **Individual Users**
+- **Applications**
+- **Users and groups that have a certain value in a custom field**
+##### b. Available Permisions
+###### 1. Project Permissions
+
+| Permission              | Explanation                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Administer Projects     | Grants users full administrative control over a specific project in Jira. Users with this permission can:<br><br>- **Configure Project Details**: Modify the project's name, description, avatar, and project lead.<br>- **Manage Roles and Permissions**: Create, edit, and assign project roles; configure permission schemes to control what users can do within the project.<br>- **Customize Workflows**: Design and edit the workflows that dictate the life cycle of issues within the project.<br>- **Set Up Screens and Fields**: Customize issue screens by adding or removing fields; configure field behaviors and layouts.<br>- **Manage Issue Types**: Create and modify issue types and their associated schemes to organize different kinds of work.<br>- **Configure Notifications**: Set up notification schemes to control who gets email updates and when.<br>- **Handle Components and Versions**: Organize work by setting up components and fix versions for better project tracking.<br>- **Integrate Add-ons and Plugins**: Install and manage project-specific apps or plugins to enhance functionality.<br>- **Bulk Operations**: Perform bulk changes on issues, such as editing or transitioning multiple issues at once.<br><br>**Note:** This permission is confined to the project it is granted for and does not provide global administrative rights across all projects in Jira. |
+| Browse Projects         | Ability to browse projects and the issues within them.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| Manage sprints          | Ability to manage sprints.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| Service Project Agent   | Allows users to interact with customers and access Jira Service Management features of a project.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| View aggregated data    | Users with this permission will have access to view combined and summarised project data, regardless of their individual permissions. [Learn more.](https://support.atlassian.com/jira-cloud-administration/docs/permissions-for-company-managed-projects/#Permissionsforcompanymanagedprojects-data)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| View Development Tools  | Allows users in a software project to view development-related information on the issue, such as commits, reviews and build information.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| View Read-Only Workflow | Users with this permission may view a read-only version of a workflow.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+###### 2. Issue Permissions
+
+| Permission         | Explanation                                                                                                                                                                            |
+| ------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Assignable User    | Users with this permission may be assigned to issues.                                                                                                                                  |
+| Assign Issues      | Ability to assign issues to other people.                                                                                                                                              |
+| Close Issues       | Ability to close issues. Often useful where your developers resolve issues, and a QA department closes them.                                                                           |
+| Create Issues      | Ability to create issues.                                                                                                                                                              |
+| Delete Issues      | Ability to delete issues.                                                                                                                                                              |
+| Edit Issues        | Ability to edit issues.                                                                                                                                                                |
+| Link Issues        | Ability to link issues together and create linked issues. Only useful if issue linking is turned on.                                                                                   |
+| Modify Reporter    | Ability to modify the reporter when creating or editing an issue.                                                                                                                      |
+| Move Issues        | Ability to move issues between projects or between workflows of the same project (if applicable). Note the user can only move issues to a project they have the create permission for. |
+| Resolve Issues     | Ability to resolve and reopen issues. This includes the ability to set a fix version.                                                                                                  |
+| Schedule Issues    | Ability to view or edit an issue's due date.                                                                                                                                           |
+| Set Issue Security | Ability to set the level of security on an issue so that only people in that security level can see the issue.                                                                         |
+| Transition Issues  | Ability to transition issues.                                                                                                                                                          |
+
+###### 3. Voters & Watchers Permissions
+
+| Permission               | Explanation                                          |
+| ------------------------ | ---------------------------------------------------- |
+| Manage Watchers          | Ability to manage the watchers of an issue.          |
+| View Voters and Watchers | Ability to view the voters and watchers of an issue. |
+
+###### 4. Comments Permissions
+
+| Permission          | Explanation                                    |
+| ------------------- | ---------------------------------------------- |
+| Add Comments        | Ability to comment on issues.                  |
+| Delete All Comments | Ability to delete all comments made on issues. |
+| Delete Own Comments | Ability to delete own comments made on issues. |
+| Edit All Comments   | Ability to edit all comments made on issues.   |
+| Edit Own Comments   | Ability to edit own comments made on issues.   |
+
+###### 5. Attachments Permissions
+
+| Permission             | Explanation                                                  |
+| ---------------------- | ------------------------------------------------------------ |
+| Create Attachments     | Users with this permission may create attachments.           |
+| Delete All Attachments | Users with this permission may delete all attachments.       |
+| Delete Own Attachments | Users with this permission may delete their own attachments. |
+
+###### 6. Time Tracking Permissions
+
+| Permission          | Explanation                                    |
+| ------------------- | ---------------------------------------------- |
+| Delete All Worklogs | Ability to delete all worklogs made on issues. |
+| Delete Own Worklogs | Ability to delete own worklogs made on issues. |
+| Edit All Worklogs   | Ability to edit all worklogs made on issues.   |
+### 2.4.3 Administrators
 
 **Project Administrators** have the highest level of control within a project. Their responsibilities typically include:
 - **Configuring project settings**: This includes managing project details like the name, key, workflows, issue types, and boards.
@@ -195,7 +299,7 @@ Jira offers a detailed system of roles and permissions to control who can access
 
 Project administrators play a crucial role in ensuring that the project is set up and maintained properly, aligning Jira with the team’s processes.
 
-### 2.4.2 Developers
+### 2.4.4 Developers
 
 **Developers** in Jira have permissions to interact with the board and issues related to the project. Their primary functions include:
 - **Creating and updating issues**: Developers can create tasks, bugs, and user stories, assign them to themselves or teammates, and move them through the workflow.
@@ -204,7 +308,7 @@ Project administrators play a crucial role in ensuring that the project is set u
 
 Developers do not have the authority to alter the project configuration but are key users of the project management interface.
 
-### 2.4.3 Project Users
+### 2.4.5 Project Users
 
 **Project Users** are individuals who need access to the project but don’t have the full capabilities of developers or administrators. This role could include team members who contribute to tasks but are not directly responsible for development or management, such as:
 - **Stakeholders**: Individuals who need to monitor project progress but don’t actively contribute to task execution.
