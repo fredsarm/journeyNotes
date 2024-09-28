@@ -4,13 +4,24 @@ This guide provides a structured overview of the most important concepts and top
 
 ---
 
-### 1. **Python Basics**
+# 1. **Python Basics**
 
 Start with the fundamental syntax and structures of the Python language.
 
-- **Variables and Data Types:**
+## Variables and Data Types:
   - Integers, floats, strings, booleans, None.
   - Type conversion (`int()`, `float()`, `str()`, etc.).
+
+## Reserved keywords
+
+| and     | as    | assert | break    | class  | continue |
+| ------- | ----- | ------ | -------- | ------ | -------- |
+| def     | del   | elif   | else     | except | exec     |
+| finally | for   | from   | global   | if     | import   |
+| in      | is    | lambda | nonlocal | not    | or       |
+| pass    | raise | return | try      | while  | with     |
+| yield   | True  | False  | None     |        |          |
+
   
 - **Basic Operators:**
   - Arithmetic (`+`, `-`, `*`, `/`, `//`, `%`, `**`).
