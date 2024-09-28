@@ -7,7 +7,7 @@
 | Advance project for portfolio           | 96                | 5                | 5               |                  |                   |
 | HTML                                    | 6                 | 1                |                 |                  |                   |
 | CSS                                     | 14                | 1                |                 |                  |                   |
-| **Python**                              | 160               | 6                | 5               | 4                | 4                 |
+| **Python**                              | 160               | 6                | 12              |                  |                   |
 | JavaScript                              | 24                | 1                | 2               |                  |                   |
 | **React**                               | 77                | 4                |                 |                  |                   |
 | **Next.js**                             | 54                | 2                |                 |                  |                   |
