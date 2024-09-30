@@ -1,34 +1,33 @@
-# Pomodoros Distribution by Subject
 
-| Skill                                   | Project Pomodoros | Weekly Pomodoros | Total Completed | Weekly Completed | Today's Completed |
-| --------------------------------------- | ----------------- | ---------------- | --------------- | ---------------- | ----------------- |
-| English                                 | 120               | 5                |                 |                  |                   |
-| German                                  | 288               | 7                |                 |                  |                   |
-| Advance project for portfolio           | 96                | 5                | 5               |                  |                   |
-| HTML                                    | 6                 | 1                |                 |                  |                   |
-| CSS                                     | 14                | 1                |                 |                  |                   |
-| **Python**                              | 160               | 6                | 12              |                  |                   |
-| JavaScript                              | 24                | 1                | 2               |                  |                   |
-| **React**                               | 77                | 4                |                 |                  |                   |
-| **Next.js**                             | 54                | 2                |                 |                  |                   |
-| Express                                 | 59                | 2                |                 |                  |                   |
-| Angular                                 | 84                | 2                |                 |                  |                   |
-| **TypeScript**                          | 45                | 2                |                 |                  |                   |
-| PostgreSQL                              | 7                 | 2                |                 |                  |                   |
-| **Django**                              | 120               | 5                |                 |                  |                   |
-| API (Application Programming Interface) | 48                | 2                |                 |                  |                   |
-| **Software Testing**                    | 48                | 2                |                 |                  |                   |
-| Business Intelligence                   | 72                | 2                |                 |                  |                   |
-| **Amazon AWS**                          | 96                | 4                |                 |                  |                   |
-| Google Cloud                            | 72                | 2                |                 |                  |                   |
-| Azure                                   | 72                | 2                |                 |                  |                   |
-| **Virtual Machines**                    | 34                | 1                |                 |                  |                   |
-| **VSCode**                              | 8                 | 1                |                 |                  |                   |
-| **Git**                                 | 11                | 1                | 2               |                  |                   |
-| **IEEE Std 830-1998 Specification**     | 24                | 1                |                 |                  |                   |
-| **Clean Code**                          | 48                | 2                |                 |                  |                   |
-| Continuous Delivery                     | 72                | 3                |                 |                  |                   |
-| **Jira**                                | 32                | 1                | 45              |                  |                   |
-| **Agile**                               | 24                | 1                | 1               |                  |                   |
-| **Scrum**                               | 24                | 1                | 2               |                  |                   |
-| SAFe 5.0 Distilled                      | 24                | 1                |                 |                  |                   |
+| Summary                         | Status | Original estimate (min) | Σ Time Spent (min) |
+| ------------------------------- | ------ | ----------------------- | ------------------ |
+| SAFe 5.0 Distilled              | To Do  | 600                     | 0                  |
+| SCRUM and KANBAN                | To Do  | 600                     | 50                 |
+| Agile                           | To Do  | 600                     | 25                 |
+| Continuous Delivery             | To Do  | 1800                    | 0                  |
+| Clean Code                      | To Do  | 1200                    | 0                  |
+| IEEE Std 830-1998 Specification | To Do  | 600                     | 0                  |
+| Git                             | To Do  | 275                     | 50                 |
+| VsCode                          | To Do  | 200                     | 0                  |
+| Virtual Machines                | To Do  | 850                     | 0                  |
+| Azure                           | To Do  | 1800                    | 0                  |
+| Google Cloud                    | To Do  | 1800                    | 0                  |
+| Amazon AWS                      | To Do  | 2400                    | 0                  |
+| Business Inteligence            | To Do  | 1800                    | 0                  |
+| Software Testing                | To Do  | 1200                    | 0                  |
+| APIs                            | To Do  | 1200                    | 0                  |
+| Django                          | To Do  | 3000                    | 0                  |
+| PostgreSQl                      | To Do  | 175                     | 0                  |
+| TypeScript                      | To Do  | 1125                    | 0                  |
+| Angular                         | To Do  | 2100                    | 0                  |
+| Express                         | To Do  | 1475                    | 0                  |
+| Next                            | To Do  | 1350                    | 0                  |
+| React                           | To Do  | 1925                    | 0                  |
+| CSS                             | To Do  | 350                     | 0                  |
+| HTML                            | To Do  | 150                     | 0                  |
+| Push The Project For Portfolio  | To Do  | 2400                    | 125                |
+| German                          | To Do  | 7200                    | 0                  |
+| English                         | To Do  | 3000                    | 60                 |
+| JavaScript                      | To Do  | 600                     | 50                 |
+| Python                          | To Do  | 4000                    | 500                |
+| Jira                            | Done   | 800                     | 1050               |
