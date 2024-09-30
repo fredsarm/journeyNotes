@@ -12,7 +12,7 @@ Start with the fundamental syntax and structures of the Python language.
   - Integers, floats, strings, booleans, None.
   - Type conversion (`int()`, `float()`, `str()`, etc.).
 
-## Reserved keywords
+## Reserved words
 
 | and     | as    | assert | break    | class  | continue |
 | ------- | ----- | ------ | -------- | ------ | -------- |
