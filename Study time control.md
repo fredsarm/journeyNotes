@@ -1,3 +1,4 @@
+# Study time control
 
 | Summary                         | Status | Original estimate (min) | Σ Time Spent (min) |
 | ------------------------------- | ------ | ----------------------- | ------------------ |
